@@ -1,0 +1,4 @@
+const menuBtn=document.getElementById('menuBtn');const nav=document.getElementById('mainNav');const search=document.querySelector('.search');
+if(menuBtn){menuBtn.addEventListener('click',()=>{nav.style.display=nav.style.display==='flex'?'none':'flex';nav.style.position='absolute';nav.style.top='68px';nav.style.left='14px';nav.style.right='14px';nav.style.padding='18px';nav.style.background='#fff';nav.style.border='1px solid #e7e9ee';nav.style.borderRadius='14px';nav.style.flexDirection='column';search.classList.toggle('open')})}
+document.querySelectorAll('.product-card form').forEach(form=>form.addEventListener('submit',()=>{const btn=form.querySelector('button');if(btn){btn.disabled=true;btn.innerHTML='Adding…'}}));
+document.querySelectorAll('input[type=number]').forEach(i=>i.addEventListener('change',()=>{if(+i.value<0)i.value=0;if(i.max&&+i.value>+i.max)i.value=i.max}));
