@@ -1,6 +1,15 @@
+
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/pakistanshop/wsgi.py" }
-  ] ,
-  "buildCommand":"pip install -r requirements.txt && python manage.py collectstatic --noinput",
+  "builds": [
+    {
+      "src": "pakistanshop/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "pakistanshop/wsgi.py"
+    }
+  ]
 }
