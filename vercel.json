@@ -1,15 +1,6 @@
 {
-  "builds": [
-    {
-      "src": "pakistanshop/wsgi.py",
-      "use": "@vercel/python",
-      "config": { "maxLambdaSize": "15mb", "runtime": "python3.12" }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "pakistanshop/wsgi.py"
-    }
-  ]
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/pakistanshop/wsgi.py" }
+  ] ,
+  "buildCommand":"pip install -r requirements.txt && python manage.py collectstatic --noinput",
 }
